@@ -1,6 +1,6 @@
 # To do list app
 
-###Stack/Framework
+### Stack/Framework
 
 - Front end - Vue Js (Nuxt - framework, Vuex store)
 - backend (API Server) - Node-Epxpress js, mocha(testing)
