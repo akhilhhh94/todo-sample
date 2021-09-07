@@ -1,0 +1,5 @@
+FROM mongo
+# Ensure an empty history file
+RUN echo "" > ~/.dbshell
+RUN chmod 0 ~/.dbshell
+COPY ./docker-entrypoint-initdb.d/init-mongo.js /docker-entrypoint-initdb.d/init-mongo.js

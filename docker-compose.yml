@@ -1,0 +1,38 @@
+version: '3'
+services:
+  node:
+    restart: always
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - ./backend:/app
+  nodefr:
+    restart: always
+    build:
+      context: .
+      dockerfile: FeDocker
+    ports:
+      - 127.0.0.1:8080:8080
+    volumes:
+      - ./frontend:/app    
+  mongo:
+    build:
+      context: .
+      dockerfile: MongoDocker
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: admin
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongodb:/data/db
+      - ./docker-entrypoint-initdb.d/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+    command: mongod --port 27017 --auth
+volumes:
+ mongodb:
+ docker-entrypoint-initdb.d:
+ backend:
+ frontend:
