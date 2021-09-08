@@ -10,9 +10,12 @@
 ### Steps for deployment
 
 - clone the repo (checkout `devlop` branch)
+- ``docker-compose build``
+- `` docker-compose run node npm install``
+- ``docker-compose run nodefr npm install``
 - ``docker-compose up``
 - open `http://localhost:8080/ `
-- Backend unit test `npm run test` on BE service.
+- Backend unit test `docker-compose run node npm run test`.
 
 ### port details
 
@@ -43,7 +46,7 @@ curl --request POST \
   --data email=akhil1212@admin.com
 ```
 
-#### Get User Info
+#### Get all todo
 
 ```shell
 curl --request GET \

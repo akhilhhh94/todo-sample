@@ -22,8 +22,8 @@ describe("Auth", () => {
 	const testData = {
 		"firstName":"test",
 		"lastName":"testing",
-		"password":"Test@123",
-		"email":"maitraysuthar@test12345.com"
+		"password":"123456",
+		"email":"akhilhh94@gmail.com"
 	};
 
 	/*
@@ -62,13 +62,13 @@ describe("Auth", () => {
   * Test the /POST route
   */
 	describe("/POST Login", () => {
-		it("it should Send account not confirm notice.", (done) => {
+		it("it should be login.", (done) => {
 			chai.request(server)
 				.post("/api/auth/login")
 				.send({"email": testData.email,"password": testData.password})
 				.end((err, res) => {
-					res.should.have.status(401);
-					res.body.should.have.property("message").eql("Account is not confirmed. Please confirm your account.");
+					res.should.have.status(200);
+					res.body.should.have.property("message").eql("Login Success.");
 					done();
 				});
 		});
@@ -76,20 +76,6 @@ describe("Auth", () => {
 
 
 
-	/*
-  * Test the /POST route
-  */
-	describe("/POST Login", () => {
-		it("It should send validation error for Login", (done) => {
-			chai.request(server)
-				.post("/api/auth/login")
-				.send({"email": testData.email})
-				.end((err, res) => {
-					res.should.have.status(400);
-					done();
-				});
-		});
-	});
 
 	/*
   * Test the /POST route
