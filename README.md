@@ -23,6 +23,10 @@
 - mongo -  `27017` 
 - API backend - `3000`
 
+### Architechture diagram
+
+inside ``Architechture diagram`` folder
+
 ### API Documentation(CURL)
 
 #### Login
