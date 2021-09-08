@@ -42,10 +42,6 @@ describe("Todo", () => {
 				});
 		});
 	});
-
-	/*
-  * Test the /POST route
-  */
 	describe("/POST Login", () => {
 		it("it should Send account not confirm notice.", (done) => {
 			chai.request(server)
