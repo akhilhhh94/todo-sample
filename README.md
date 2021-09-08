@@ -2,34 +2,34 @@
 
 ### Stack/Framework
 
-- Front end - Vue Js (Nuxt - framework, Vuex store, Jest(test))
-- backend (API Server) - Node-Epxpress js, mocha(testing)
+- Front-end - Vue Js (Nuxt - framework, Vuex store, Jest(test))
+- Back-end (API Server) - Node-Express js, mocha(Testing)
 - Db: mongo
-- docker
+- Docker (Docker-compose)
 
-### Steps for deployment
+### Steps for Deployment
 
-- clone the repo (checkout `devlop` branch)
+- Clone the repo (checkout `devlop` branch)
 - ``docker-compose build``
 - `` docker-compose run node npm install``
 - ``docker-compose run nodefr npm install``
 - ``docker-compose up``
-- open `http://localhost:8080/ `
+- Open `http://localhost:8080/ `
 - Backend unit test `docker-compose run node npm run test`.
 
-### port details
+### Port details
 
-- front end - `8080`
-- mongo -  `27017` 
+- Front end - `8080`
+- Mongo -  `27017` 
 - API backend - `3000`
 
-### Architechture diagram
+### Architecture diagram
 
 inside ``Architechture diagram`` folder
 
 ### API Documentation(CURL)
 
-#### Login
+#### Login user
 ```shell
 curl --request POST \
   --url http://localhost:3000/api/auth/login \
@@ -38,7 +38,7 @@ curl --request POST \
   --data password=123456
 ```
 
-#### Register
+#### Register user
 
 ```shell
 curl --request POST \
@@ -50,7 +50,7 @@ curl --request POST \
   --data email=akhil1212@admin.com
 ```
 
-#### Get all todo
+#### Get all Todos
 
 ```shell
 curl --request GET \
@@ -60,7 +60,7 @@ curl --request GET \
   --data limit=11
 ```
 
-#### GEt all Todos of a user
+#### Get all Todos of a user
 
 ```shell
 curl --request GET \
@@ -70,7 +70,7 @@ curl --request GET \
   --data id=<TODO_ID>
 ```
 
-#### Create a new todo
+#### Create a new Todo
 
 ```shell
 curl --request POST \
@@ -89,7 +89,7 @@ curl --request PUT \
   --data title=<NEW TITLE>
 ```
 
-#### Delete a todo
+#### Delete a Todo
 
 ```shell
 curl --request DELETE \
@@ -110,7 +110,7 @@ curl --request POST \
   --data order=<ORDER>
 ```
 
-#### Delete note
+#### Delete Note
 
 ```shell
 curl --request DELETE \
