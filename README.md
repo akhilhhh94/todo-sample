@@ -7,7 +7,7 @@
 - Db: mongo
 - Docker (Docker-compose)
 
-### Steps for Deployment
+### Steps for Deployment using docker-compose
 
 - Clone the repo (checkout `devlop` branch)
 - ``docker-compose build``
@@ -16,6 +16,23 @@
 - ``docker-compose up``
 - Open `http://localhost:8080/ `
 - Backend unit test `docker-compose run node npm run test`.
+
+### Steps for local deployment (Without docker)
+- Set up the mongoDB on local
+
+---Backend---
+  
+- ``cd backend`` and `npm install`
+- Put the connection URL of mongo DB in ``.env`` file
+- (Optional) Set the test DB connection string on ``test/testConfig.js``
+- ``npm start``
+
+---Front end ---
+
+-  ``cd frontend`` and `npm install`
+-  check the ``nuxt.config.js`` file for API configuration
+-  `npm run dev`  
+
 
 ### Port details
 
