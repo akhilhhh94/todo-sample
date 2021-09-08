@@ -17,13 +17,13 @@
               <div @click="removetodo(todo._id)" class="close">X</div>
             </div>
             <div class="col_content_wrapper">
-              <ul>
+              <ul :ref="todo._id">
                 <li v-for="todoData in todosData[todo._id]" :key="todoData._id">
                   <tododataitem :todo="todo" :todoitem="todoData" />
                 </li>
               </ul>
               <div class="col_bottom_wrapper">
-                <addtododata :todo="todo" />
+                <addtododata v-on:scrollTo="scrollToElement" :todo="todo" />
               </div>
             </div>
             <!-- col_content_wrapper -->
@@ -249,6 +249,12 @@ export default {
           this.paginationLock = false;
           this.$toast.error("unable to load todos");
         });
+    },
+    scrollToElement(id) {
+      const el = this.$refs[id][0];
+      this.$nextTick(() => {
+        el.scrollTop = el.scrollHeight;
+      });
     },
   },
 };

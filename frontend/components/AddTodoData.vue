@@ -6,6 +6,7 @@
       type="text"
       v-model="text"
       name=""
+      maxlength="22"
       :disabled="disabled"
       placeholder="Type here to add to the list"
     /><button @click="AddData()" :disabled="disabledBtn" class="add_btn">
@@ -26,7 +27,6 @@ export default {
   methods: {
     onChange(event) {
       var vl = event.target.value;
-      console.log(vl);
       if (!vl || !vl.trim()) {
         this.disabledBtn = true;
         return false;
@@ -48,6 +48,7 @@ export default {
           this.$toast.success(`Item added to list '${this.todo.name}'`, {
             duration: "1000",
           });
+          this.$emit('scrollTo', this.todo._id)
           this.text = '';
           setTimeout(() => {
             this.disabledBtn = true;
