@@ -7,7 +7,7 @@
 - Db: mongo
 - docker
 
-### Steps for deploement
+### Steps for deployment
 
 - clone the repo (checkout `devlop` branch)
 - ``docker-compose up``
